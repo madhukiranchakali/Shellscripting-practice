@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PERSON1=1$
-PERSON2=2$
+PERSON1=$1
+PERSON2=$2
 
 echo "$PERSON1:: Welcome to Alska $PERSON2"
 echo "$PERSON2:: Thank You $PERSON1, Finally not on zoon webinar"
