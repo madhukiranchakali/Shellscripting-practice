@@ -8,7 +8,7 @@ N="\e[0m"
 
 LOGS_FOLDER="var/log/Shellscripting-practice"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log
+LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
 echo "Script started executed at: $(date)" 
