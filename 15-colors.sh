@@ -29,7 +29,7 @@ dnf list installed mysql
         echo -e "MYSQL already exit....$Y SKIPPING $N"
     fi
 dnf list installed nginx
-    if [$? -ne 0 ] ; then
+    if [ $? -ne 0 ] ; then
         dnf install nginx -y
         VALIDATE $? "Nginx"
     else
