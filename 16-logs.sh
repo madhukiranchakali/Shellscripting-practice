@@ -29,25 +29,25 @@ VALIDATE(){
  }
 
 dnf list installed mysql &>>$LOG_FILE
-    if [ $? -ne 0 ] ; then
-        dnf install mysql -y &>>$LOG_FILE
-        VALIDATE $? "MYSQL"
-    else
-        echo -e "MYSQL already exit....$Y SKIPPING $N"
-    fi  
+if [ $? -ne 0 ] ; then
+    dnf install mysql -y &>>$LOG_FILE
+    VALIDATE $? "MYSQL"
+else
+    echo -e "MYSQL already exit....$Y SKIPPING $N"
+fi  
 
 dnf list installed nginx &>>$LOG_FILE
-    if [ $? -ne 0 ] ; then
-        dnf install nginx -y &>>$LOG_FILE
-        VALIDATE $? "Nginx"
-    else
-        echo -e "Nginx already exist......$Y SKIPPING $N"
-    fi 
+if [ $? -ne 0 ] ; then
+    dnf install nginx -y &>>$LOG_FILE
+    VALIDATE $? "Nginx"
+else
+    echo -e "Nginx already exist......$Y SKIPPING $N"
+fi 
 
 dnf list installed python3 &>>$LOG_FILE
-    if [ $? -ne 0 ] ; then 
-        dnf install python3 -y &>>$LOG_FILE
-        VALIDATE $? "Python3"
-    else
-        echo -e "python3 already exit.....$Y SKIPPING $N"
-    fi           
+if [ $? -ne 0 ] ; then 
+    dnf install python3 -y &>>$LOG_FILE
+    VALIDATE $? "Python3"
+else
+    echo -e "python3 already exit.....$Y SKIPPING $N"
+fi           
