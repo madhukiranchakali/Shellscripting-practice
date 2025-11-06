@@ -28,7 +28,7 @@ VALIDATE(){
     fi 
  }
 
- for package in$@
+ for package in $@
  do 
     echo "package is: $package"
 done    
