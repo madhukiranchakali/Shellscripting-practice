@@ -10,7 +10,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log
 
 mkdir -p $LOGS_FOLDER
-echo "Script started executed at: $date" | tee -a $LOG_FILE
+echo "Script started executed at: $date" 
 
 USERID=$(id -u)
 
@@ -24,7 +24,7 @@ VALIDATE(){
         echo -e "Installing $2.....$R FAILURE $N"
         exit 1
     else
-        echo -e "Installating $2.....$G SUCCESS $N" | tee -a $LOG_FILE
+        echo -e "Installating $2.....$G SUCCESS $N" 
     fi 
  }
 
