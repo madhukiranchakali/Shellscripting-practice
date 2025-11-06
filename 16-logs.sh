@@ -1,7 +1,6 @@
 #!/bin/bash
 
 USERID=$(id -u)
-
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -12,13 +11,12 @@ SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log
 
 mkdir -p $LOGS_FOLDER
-
-echo "Script started executed at: $date" 
+echo "Script started executed at: $(date)" 
 
 
 if [ $USERID -ne 0 ]; then
     echo "ERROR:: Please run this script with root privilege"
-        exit 1
+    exit 1
 fi
 
 VALIDATE(){
