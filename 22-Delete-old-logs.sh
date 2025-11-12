@@ -8,7 +8,6 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1 )
-SCRIPT_DIR=$PWD
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOGS_FOLDER
@@ -21,7 +20,7 @@ if [ ! -d $SOURCE_DIR ]; then
     exit 1
 fi
 
-FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.l0g" -type f )
+FILES_TO_DELETE=$(find $SOURCE_DIR -name "*.l0g" -type f -mtime +14)
 
 while IFS= read -r filepath
 do 
